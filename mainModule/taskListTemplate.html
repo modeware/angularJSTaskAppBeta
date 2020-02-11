@@ -1,0 +1,17 @@
+<div>
+    <form ng-submit="$ctrl.validateAndTask(name, task)">
+        <label>Name</label> <input ng-blur="checkName(name)" ng-model="name" type="search">
+        <label>Task</label><input ng-blur="checkTask(task)" ng-model="task" type="search">
+        <input type="submit">
+        <button ng-click="deleteTasks()">Delete</button>
+        <br/>
+        <span>{{nameWarning+"          "}}</span> <span>{{taskWarning}}</span>
+    </form>
+</div>
+
+
+<div ng-repeat="task in taskArray">
+    <input ng-model="task.isChecked" ng-click="addToDeleteArray(task)" type="checkbox">
+    <span>{{task.name}}</span>
+    <span>{{task.task}}</span>
+</div>
